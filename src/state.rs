@@ -50,8 +50,6 @@ pub struct TokenManager {
     pub bump: u8,
     // Count for number of token managers for this specific mint
     pub count: u64,
-    // Number of invalidators in this current token manager
-    pub num_invalidators: u8,
     // Issuer or initializer of this token manager
     pub issuer: Pubkey,
     // Mint of this token manager
@@ -64,14 +62,10 @@ pub struct TokenManager {
     pub state: u8,
     // Timestamp for last state change
     pub state_changed_at: i64,
-    // What happens upon invalidation
-    pub invalidation_type: u8,
     // Token account holding the token currently
     pub recipient_token_account: Pubkey,
     // Mint representing the rightful owner of this token
     pub receipt_mint: Option<Pubkey>,
-    // Authority to approve claiming this token
-    pub claim_approver: Option<Pubkey>,
     // Authority to approve transfering this token
     pub transfer_authority: Option<Pubkey>,
     // Public keys that are allowed to invalidate this token manager
